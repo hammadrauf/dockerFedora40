@@ -6,18 +6,19 @@ Clone the Git Repository or Download the ZIP package and expand. CD into the fol
 
 Build Docker Image:
 ```
-docker build -t hammadrauf/fedora40 .
+podman build -t hammadrauf/fedora40 .
 ```
 OR Pull from Docker Hub, Quay.io (Not uploaded yet).
 
 Run Docker Conatiner:
 ```
-docker run -d --name fedora40 --hostname fedora40 -it hammadrauf/fedora40:latest sleep infinity & wait
+podman run -d --systemd=true  --name fedora40 --hostname fedora40 -ti hammadrauf/fedora40:latest
+podman run -d --name fedora40 --hostname fedora40 -it hammadrauf/fedora40:latest
 ```
 
 Connect to BASH Shell in the Container:
 ```
-docker exec -it fedora40 /bin/bash
+podman exec -it fedora40 /bin/bash
 ```
 
 
