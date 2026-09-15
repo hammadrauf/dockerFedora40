@@ -8,12 +8,16 @@ Build Docker Image:
 ```
 podman build -t hammadrauf/fedora40 .
 ```
-OR Pull from Docker Hub, Quay.io (Not uploaded yet).
+OR Pull from Docker Hub, Quay.io .
 
 Run Docker Conatiner:
 ```
 podman run -d --systemd=true  --name fedora40 --hostname fedora40 -ti hammadrauf/fedora40:latest
 podman run -d --name fedora40 --hostname fedora40 -it hammadrauf/fedora40:latest
+
+OR
+
+docker run -d --privileged --name fedora40 --hostname fedora40 -ti hammadrauf/fedora40:latest
 ```
 
 Connect to BASH Shell in the Container:
